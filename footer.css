@@ -1,0 +1,124 @@
+/* Footer Styles */
+.footer-wrapper {
+    background-color: #3a0a0a;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.footer {
+    background-color: #3a0a0a;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+    position: relative;
+    border-top-left-radius: 150px 100px;  /* More pronounced curve */
+    border-top-right-radius: 150px 100px;
+}
+/* Before & After Pseudo Elements for Extra Curve */
+.footer-wrapper::before,
+.footer-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    background-color: #3a0a0a;
+    bottom: 100%;
+    border-radius: 50%;
+}
+
+.footer-wrapper::before {
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.footer-wrapper::after {
+    right: 0;
+    transform: translateX(50%);
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-logo-section {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px;
+}
+
+.qr-code {
+    width: 120px;
+    margin-top: 10px;
+}
+
+.store-buttons img {
+    width: 130px;
+    margin: 10px 5px;
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-links div {
+    margin: 10px;
+    text-align: left;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-icons img {
+    width: 30px;
+    margin: 5px;
+}
+
+.footer-social {
+    text-align: center;
+    flex: 1;
+    margin-top: 20px;
+}
+
+.footer-social img {
+    width: 30px;
+    margin: 5px;
+}
+
+.payment-icons img {
+    width: 50px;
+    margin: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #5e2a2a;
+    padding-top: 10px;
+}

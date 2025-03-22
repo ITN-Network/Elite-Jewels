@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Jewels</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="logo/Elite Jewels logo.png" alt="Elite Jewels">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Gold, Diamond Jewellery and more...">
+                <button aria-label="Search" title="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="icons">
+                <i class="fas fa-gem"></i>
+                <i class="fas fa-store"></i>
+                <i class="fas fa-heart"></i>
+                <a href="login.html" title="Login">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">All Jewellery</a></li>
+                <li><a href="#">Gold</a></li>
+                <li><a href="#">Diamond</a></li>
+                <li><a href="#">Earrings</a></li>
+                <li><a href="#">Rings</a></li>
+                <li><a href="#">Daily Wear</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Wedding</a></li>
+                <li><a href="#">Gifting</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+<!-- Slide Show -->
+<div class="slideshow-container">
+    <div class="slide fade">
+        <img src="images/Slide 1.jpeg" alt="Jewelry Image 1">
+    </div>
+
+    <div class="slide fade">
+        <img src="images/Slide 2.jpeg" alt="Jewelry Image 2">
+    </div>
+
+    <div class="slide fade">
+        <img src="images/Slide 1.jpeg" alt="Jewelry Image 3">
+    </div>
+
+    <!-- Navigation Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function plusSlides(n) {
+        slideIndex += n - 1;
+        showSlides();
+    }
+</script>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo-section">
+            <img src="logo.png" alt="Elite Jewels Logo" class="footer-logo">
+            <p>Download the Elite Jewels App Now</p>
+            <img src="qr-code.png" alt="QR Code" class="qr-code">
+            <div class="store-buttons">
+                <img src="play-store.png" alt="Play Store">
+                <img src="app-store.png" alt="App Store">
+            </div>
+        </div>
+        <div class="footer-links">
+            <div>
+                <h3>Useful Links</h3>
+                <a href="#">Delivery Information</a>
+                <a href="#">International Shipping</a>
+                <a href="#">Payment Options</a>
+                <a href="#">Track Your Order</a>
+                <a href="#">Returns</a>
+                <a href="#">Find a Store</a>
+            </div>
+            <div>
+                <h3>Information</h3>
+                <a href="#">Blog</a>
+                <a href="#">Offers & Contest Details</a>
+                <a href="#">Help & FAQs</a>
+                <a href="#">About Us</a>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>+91 81473 49478</p>
+                <p>1800-266-0123</p>
+                <div class="contact-icons">
+                    <a href="#"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+                    <a href="#"><img src="email-icon.png" alt="Email"></a>
+                    <a href="#"><img src="chat-icon.png" alt="Chat"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <h3>Social</h3>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            <div class="payment-icons">
+                <img src="visa.png" alt="Visa">
+                <img src="mastercard.png" alt="MasterCard">
+                <img src="amex.png" alt="American Express">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Elite Jewels. All Rights Reserved.</p>
+        <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a></p>
+    </div>
+</footer>
