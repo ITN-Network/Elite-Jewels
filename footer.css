@@ -14,8 +14,7 @@
     justify-content: space-around;
     text-align: left;
     position: relative;
-    border-top-left-radius: 150px 100px;  /* More pronounced curve */
-    border-top-right-radius: 150px 100px;
+    border-top-left-radius: 0px /* More pronounced curve */
 }
 /* Before & After Pseudo Elements for Extra Curve */
 .footer-wrapper::before,
