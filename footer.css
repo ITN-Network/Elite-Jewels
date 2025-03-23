@@ -54,13 +54,9 @@
     width: 150px;
 }
 
-.qr-code {
-    width: 120px;
-    margin-top: 10px;
-}
-
 .store-buttons img {
-    width: 130px;
+    size: 5%;
+    width: 30px;
     margin: 10px 5px;
 }
 
@@ -105,7 +101,7 @@
 }
 
 .footer-social img {
-    width: 30px;
+    width: 50px;
     margin: 5px;
 }
 
