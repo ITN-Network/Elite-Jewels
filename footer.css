@@ -117,3 +117,45 @@
     border-top: 1px solid #5e2a2a;
     padding-top: 10px;
 }
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Add spacing between links */
+        text-align: center;
+    }
+
+    .footer-links div {
+        width: 100%; /* Make sections full width */
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
+
+    .footer-social a {
+        margin: 0 10px;
+        font-size: 20px; /* Adjust icon size */
+    }
+
+    .payment-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .store-buttons img {
+        width: 30px; /* Adjust width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 80%; /* Prevent it from being too large */
+    }
+}
