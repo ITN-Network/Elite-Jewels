@@ -27,3 +27,23 @@ menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("open");
   mobileMenu.classList.toggle("show");
 });
+
+const text = document.querySelector('.icon-text');
+const ring = document.querySelector('.icon-ring');
+
+function animateOnScroll() {
+  const section = document.querySelector('.icon-section');
+  const rect = section.getBoundingClientRect();
+  const trigger = window.innerHeight / 1.3;
+
+  if (rect.top < trigger && rect.bottom > 0) {
+    text.classList.add('active');
+    ring.classList.add('active');
+  } else {
+    text.classList.remove('active');
+    ring.classList.remove('active');
+  }
+}
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);

@@ -159,3 +159,103 @@
     }
   }
   
+  /* Section Styling */
+.icon-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .icon-banner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .banner-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .icon-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .icon-text {
+    max-width: 45%;
+    color: #000;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+  }
+  
+  .icon-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .icon-text p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .discover-btn {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+  }
+  
+  .icon-ring {
+    max-width: 45%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease;
+  }
+  
+  .icon-ring img {
+    width: 100%;
+  }
+  
+  /* Animation Classes */
+  .icon-text.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .icon-ring.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .icon-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .icon-text, .icon-ring {
+      max-width: 100%;
+      transform: none;
+    }
+  
+    .icon-text h1 {
+      font-size: 2rem;
+    }
+  
+    .icon-ring img {
+      width: 80%;
+      margin-top: 20px;
+    }
+  }
