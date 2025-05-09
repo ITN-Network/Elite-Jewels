@@ -70,9 +70,9 @@ body {
   will-change: transform;
 }
 
-/* Animate subtle product image rotation (like Apple) */
+/* Animate subtle product image rotation*/
 .product.visible .product-image {
-  animation: rotateSlow 20s linear infinite;
+  animation: rotateSlow 25s linear infinite;
 }
 
 @keyframes rotateSlow {

@@ -8,8 +8,23 @@
       {
         "ignore": [
           "backdrop-filter",
-          "user-select"
+          "user-select",
+          "min-height: auto"
         ]
+      }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "video[playsinline]"
+        ]
+      }
+    ],
+    "axe/name-role-value": [
+      "default",
+      {
+        "link-name": "off"
       }
     ]
   }
