@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite Jewels</title>
+  <link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="footer.css">
   <script defer src="script.js"></script>
@@ -41,11 +42,31 @@
     </div>
   </div>
 
-  <nav id="mobileMenu" class="hidden">
+  <nav id="mobileMenu" class="menu-wrapper hidden">
     <!-- Add your nav links -->
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Collection</a></li>
+    <ul class="menu">
+      <li class="has-submenu">
+        <button class="submenu-toggle">Collection +</button>
+        <ul class="submenu">
+          <li><a href="#">High Jewelry</a></li>
+          <li><a href="#">Jewelry</a></li>
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Gifts</a></li>
+        </ul>
+      </li>
+  
+      <li class="has-submenu">
+        <button class="submenu-toggle">Inside Elite +</button>
+        <ul class="submenu">
+          <li><a href="#">A Journey</a></li>
+          <li><a href="#">Our Designers</a></li>
+          <li><a href="#">People and Careers</a></li>
+          <li><a href="#">Stories</a></li>
+        </ul>
+      </li>
+  
+      <li><a href="#">Craftsmanship</a></li>
+      <li><a href="#">Elite Luxe</a></li>
       <li><a href="#">About</a></li>
     </ul>
   </nav>
@@ -63,29 +84,29 @@
         </div>
       </div>
     </div>
-  
+  </section>
 
   <!-- Slideshow START -->
-  <section class="slide slideshow-container">
-    <div class="slideshow-container">
-      <img src="images/Gradient 2.jpg" class="banner-bg" alt="Banner Background">
-
-      <div class="slides-wrapper">
+  <section class="product-slideshow">
+    <div class="slideshow-wrapper">
+      <img src="images/Gradient Background.jpg" class="background-banner" alt="Banner" />
+  
+      <div class="slides-container">
         <div class="slide active">
-          <img src="product1.png" class="product-img" alt="Product 1">
-          <div class="caption">B.zero1 Necklace</div>
+          <img src="images/product1.png" alt="Product 1" />
+          <p class="caption">B.zero1 Necklace</p>
         </div>
         <div class="slide">
-          <img src="product2.png" class="product-img" alt="Product 2">
-          <div class="caption">Golden Arc Chain</div>
+          <img src="images/product2.png" alt="Product 2" />
+          <p class="caption">Golden Arc Chain</p>
         </div>
         <div class="slide">
-          <img src="product3.png" class="product-img" alt="Product 3">
-          <div class="caption">Rose Link Bracelet</div>
+          <img src="images/product3.png" alt="Product 3" />
+          <p class="caption">Rose Link Bracelet</p>
         </div>
       </div>
-
-      <div class="nav-arrows">
+  
+      <div class="slide-controls">
         <span class="prev">&#10094;</span>
         <span class="next">&#10095;</span>
       </div>

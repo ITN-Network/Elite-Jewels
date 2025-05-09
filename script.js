@@ -48,17 +48,36 @@ function animateOnScroll() {
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
-const slides = document.querySelectorAll('.slide');
-let index = 0;
 
-document.querySelector('.next').onclick = () => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
-  slides[index].classList.add('active');
-};
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
 
-document.querySelector('.prev').onclick = () => {
-  slides[index].classList.remove('active');
-  index = (index - 1 + slides.length) % slides.length;
-  slides[index].classList.add('active');
-};
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
+}
+
+next.addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+prev.addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+// Show first slide initially
+showSlide(currentSlide);
+
+document.querySelectorAll('.submenu-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active');
+    const submenu = button.nextElementSibling;
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+  });
+});
