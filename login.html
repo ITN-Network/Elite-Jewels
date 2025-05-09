@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elite Jewels - Login</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <main class="login-container" role="main" aria-labelledby="login-title">
+        <div class="logo-container" aria-label="Elite Jewels Logo">
+            <!-- Replace the src below with your actual Elite Jewels logo image URL or path -->
+            <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo" class="logo-image" />
+        </div>
+        <h1 id="login-title" class="logo-text">Elite Jewels</h1>
+        <p class="tagline">Timeless Luxury, Perfected.</p>
+        <form id="login-form" novalidate>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" autocomplete="username" placeholder="you@example.com" required aria-required="true" aria-describedby="email-error" />
+            <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Your password" required aria-required="true" aria-describedby="password-error" />
+            <span id="password-error" class="error-message" role="alert" aria-live="polite"></span>
+
+            <button type="submit" aria-label="Sign in to Elite Jewels">Sign In</button>
+        </form>
+        <p class="footer-note" aria-live="polite">© 2025 Elite Jewels Co. Ltd. All rights reserved.</p>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>
