@@ -271,13 +271,25 @@
   
     .icon-text h1 {
       font-size: 2rem;
+      animation: slideInLeftMobile 1s ease-out forwards;
     }
   
     .icon-ring img {
       width: 80%;
       margin-top: 20px;
+      animation: slideInRightMobile 1s ease-out forwards;
+    }
+    @keyframes slideInRightMobile {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  
+    @keyframes slideInLeftMobile {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
   }
+
 
   .slideshow-container {
     position: relative;
