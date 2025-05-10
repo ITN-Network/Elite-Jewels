@@ -71,13 +71,3 @@ prev.addEventListener("click", () => {
   showSlide(currentSlide);
 });
 
-// Show first slide initially
-showSlide(currentSlide);
-
-document.querySelectorAll('.submenu-toggle').forEach(button => {
-  button.addEventListener('click', () => {
-    button.classList.toggle('active');
-    const submenu = button.nextElementSibling;
-    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-  });
-});

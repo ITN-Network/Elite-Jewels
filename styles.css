@@ -157,7 +157,7 @@
   #mobileMenu a {
     text-decoration: none;
     color: #000;
-    font-size: 18px;
+    font-size: 15px;
   }
   
   #mobileMenu.show {
@@ -185,6 +185,7 @@
     background: none;
     border: none;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     width: 100%;
     text-align: left;
@@ -346,91 +347,65 @@
     }
   }
 
-  .product-slideshow {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
+  /* hero banner */
+  .hero-banner {
+  position: relative;
+  background-image: url('images/hero1.jpg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: white;
+}
+
+.hero-content {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  padding: 40px 60px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 70vh;
+    align-items: flex-end;
   }
-  
-  .background-banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+
+  .hero-content {
+    padding: 30px 20px;
   }
-  
-  .slides-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+
+  .hero-content h1 {
+    font-size: 1.8rem;
   }
-  
-  .slide {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    animation: fade 1s ease-in-out;
+
+  .hero-content p {
+    font-size: 1rem;
   }
-  
-  .slide.active {
-    display: flex;
-  }
-  
-  .slide img {
-    max-width: 300px;
-    width: 80%;
-    height: auto;
-  }
-  
-  .caption {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-  }
-  
-  .slide-controls {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
-  }
-  
-  .slide-controls span {
-    cursor: pointer;
-    font-size: 2rem;
-    color: white;
-    margin-left: 10px;
-    transition: 0.3s;
-  }
-  
-  .slide-controls span:hover {
-    color: #ccc;
-  }
-  
-  @keyframes fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  /* Mobile */
-  @media (max-width: 768px) {
-    .caption {
-      font-size: 1rem;
-    }
-  
-    .slide img {
-      max-width: 200px;
-    }
-  
-    .slide-controls span {
-      font-size: 1.5rem;
-    }
-  }
+}
