@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customercare.css">
+    <title>Elite Customer Services</title>
+</head>
+<body>
+    <header>
+        <h1>Elite Jewels Customer Care</h1>
+    </header>
+    <main>
+        <section id="customer-service">
+            <h2>Contact Customer Service</h2>
+            <button id="openFormBtn">Create Ticket</button>
+        </section>
+        <section id="ticket-form-section" class="hidden">
+            <h2>Submit a Ticket</h2>
+            <form id="ticketForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="issue">Issue:</label>
+                <textarea id="issue" required></textarea>
+                
+                <button type="submit">Submit</button>
+                <button type="button" id="closeFormBtn">Cancel</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Elite Jewels Co. Ltd. All rights reserved.</p>
+    </footer>
+    <script src="customercare.js"></script>
+</body>
+</html>
