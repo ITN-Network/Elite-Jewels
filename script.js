@@ -1,23 +1,62 @@
 let prevScrollPos = window.scrollY;
 const header = document.getElementById("header");
 let scrollTimeout;
+let hoverTimeout;
 
+// Show header background
+function showHeaderBackground() {
+  header.classList.add("white-bg");
+}
+
+// Hide header background
+function hideHeaderBackground() {
+  header.classList.remove("white-bg");
+}
+
+// Scroll behavior
 window.addEventListener("scroll", () => {
   const currentScroll = window.scrollY;
 
+  // Scroll down → hide header
   if (currentScroll > prevScrollPos) {
-    header.style.top = "-100px"; // hide
-  } else {
-    header.style.top = "0"; // show
-    header.classList.add("white-bg");
+    header.style.top = "-100px";
+  }
+  // Scroll up → show header with background
+  else {
+    header.style.top = "0";
+    showHeaderBackground();
 
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-      header.classList.remove("white-bg");
-    }, 5000);
+      if (window.scrollY < 100) {
+        hideHeaderBackground();
+      }
+    }, 3000);
   }
 
   prevScrollPos = currentScroll;
+});
+
+// On icon click → show background
+document.querySelectorAll(".icons i, .icons a").forEach((icon) => {
+  icon.addEventListener("click", () => {
+    showHeaderBackground();
+  });
+});
+
+// Mouse enter → show background immediately
+header.addEventListener("mouseenter", () => {
+  showHeaderBackground();
+  clearTimeout(hoverTimeout);
+});
+
+// Mouse leave → hide background after 3s if near top
+header.addEventListener("mouseleave", () => {
+  if (window.scrollY < 100) {
+    hoverTimeout = setTimeout(() => {
+      hideHeaderBackground();
+    }, 3000);
+  }
 });
 
 const menuToggle = document.getElementById("menuToggle");
@@ -49,25 +88,4 @@ window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
 
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) slide.classList.add("active");
-  });
-}
-
-next.addEventListener("click", () => {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-});
-
-prev.addEventListener("click", () => {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-});
 
