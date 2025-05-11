@@ -383,3 +383,143 @@
     font-size: 1rem;
   }
 }
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('images/hero1.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Overlay text box */
+.overlay-text {
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+}
+
+.overlay-text h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #8B0000;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid white;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #8B0000;
+  border-color: #8B0000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overlay-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Featured Section */
+.featured {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.featured .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.featured .column {
+  flex: 1 1 300px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.featured img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.featured h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.featured p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text-link {
+  color: #000;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Icons Row */
+.icons-row {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.icon-box {
+  text-align: center;
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.icon-box img {
+  width: 30px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.icon-box p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+}
