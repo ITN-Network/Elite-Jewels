@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>404 Not Found</title>
+<style>
+  /* Reset and base styles */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: #f9fafb;
+    color: #1a202c;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    position: relative;
+  }
+
+  /* Container */
+  .container {
+    text-align: center;
+    max-width: 360px;
+    padding: 20px;
+    user-select: none;
+  }
+
+  /* Large 404 */
+  .error-code {
+    font-size: 10rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #4a90e2;
+    animation: pulse 3s infinite ease-in-out;
+    position: relative;
+    user-select: none;
+  }
+
+  /* Animated shadow flicker for "404" */
+  @keyframes pulse {
+    0%, 100% {
+      text-shadow: 
+        0 0 8px #8ab6ff,
+        0 0 15px #a3c0ff,
+        0 0 25px #b9cafb;
+      color: #4a90e2;
+    }
+    50% {
+      text-shadow: 
+        0 0 15px #73a6f9,
+        0 0 30px #95bbff,
+        0 0 45px #b4cdfd;
+      color: #5a9af7;
+    }
+  }
+
+  /* "Not Found" text animated fade in & up */
+  .message {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+    color: #4a4a4a;
+    animation: fadeUp 2s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  /* Subtext */
+  .subtext {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #777;
+    animation: fadeUp 2s 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  /* Animated floating circles in the background */
+  .background-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: #a3c0ff55;
+    animation: floatUpDown 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px #a3c0ff7f);
+  }
+  .background-shape:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .background-shape:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 70%;
+    left: 20%;
+    animation-delay: 2s;
+  }
+  .background-shape:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 10%;
+    animation-delay: 4s;
+  }
+  .background-shape:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    top: 20%;
+    right: 25%;
+    animation-delay: 3s;
+  }
+
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(20px);
+      opacity: 0.5;
+    }
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media(max-width: 400px) {
+    .error-code {
+      font-size: 6rem;
+    }
+    .message {
+      font-size: 1.2rem;
+      margin-top: -0.7rem;
+    }
+    .subtext {
+      font-size: 0.9rem;
+      margin-top: 0.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="background-shape"></div>
+  <div class="background-shape"></div>
+  <div class="background-shape"></div>
+  <div class="background-shape"></div>
+  <div class="container" role="main" aria-labelledby="error-title" aria-describedby="error-desc">
+    <h1 id="error-title" class="error-code" aria-label="404 Not Found">404</h1>
+    <p id="error-desc" class="message">Oops! Page not found.</p>
+    <p class="subtext">The page you are looking for does not exist or has been moved.</p>
+  </div>
+<script>
+  // No JavaScript animations needed, all CSS-based for smooth performance.
+  // Adding keyboard accessibility focus on container for screen readers.
+  document.querySelector('.container').tabIndex = -1;
+  document.querySelector('.container').focus();
+</script>
+</body>
+</html>
+
