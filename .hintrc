@@ -3,30 +3,20 @@
     "development"
   ],
   "hints": {
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
     "compat-api/css": [
       "default",
       {
         "ignore": [
-          "backdrop-filter",
-          "user-select",
-          "min-height: auto"
+          "user-select"
         ]
       }
     ],
-    "compat-api/html": [
-      "default",
-      {
-        "ignore": [
-          "video[playsinline]"
-        ]
-      }
-    ],
-    "axe/name-role-value": [
-      "default",
-      {
-        "link-name": "off"
-      }
-    ],
-    "button-type": "off"
+    "no-inline-styles": "off"
   }
 }
