@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Customize Jewelry - Elite Jewels</title>
+  <link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="about.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffdf9;
+      color: #3d3a31;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 3rem;
+      animation: fadeInBg 1.5s ease forwards;
+    }
+    @keyframes fadeInBg {
+      0% { background: #fffdf9; }
+      100% { background: #fefcf5; }
+    }
+    /* Banner */
+    .banner {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      height: 280px;
+      overflow: hidden;
+      user-select: none;
+      border-radius: 0 0 15px 15px;
+      box-shadow: inset 0 0 80px rgba(184,139,74,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      background: url('https://images.unsplash.com/photo-1515038932129-22dc860aedfa?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+      color: #d7bb70;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      user-select: none;
+    }
+    /* Container */
+    .container {
+      max-width: 700px;
+      width: 90vw;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #b88b4a;
+      letter-spacing: 0.1em;
+      margin: 0 0 1rem 0;
+      text-align: center;
+      user-select: none;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #7e7e7e;
+      font-size: 1.15rem;
+      margin: 0 0 2.5rem 0;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    form {
+      background: #fff;
+      box-shadow: 0 7px 20px rgba(184,139,74,0.2);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.7rem;
+      font-size: 1rem;
+      color: #3d3a31;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      user-select: none;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #e6d8a7;
+      border-radius: 10px;
+      background-color: #fefcf5;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+      font-family: inherit;
+      color: #3d3a31;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #b88b4a;
+      background-color: #fffbea;
+      outline: none;
+      box-shadow: 0 0 8px rgba(184,139,74,0.6);
+    }
+    textarea {
+      min-height: 120px;
+      max-height: 200px;
+    }
+    input[type="file"] {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 0.5rem 0;
+      color: #b88b4a;
+      font-weight: 600;
+    }
+    input[type="file"]::-webkit-file-upload-button {
+      cursor: pointer;
+      background: linear-gradient(45deg, #b88b4a, #d7bb70);
+      border: none;
+      border-radius: 25px;
+      padding: 0.45rem 1rem;
+      color: #fff;
+      font-weight: 700;
+      transition: background-position 0.3s ease;
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+    }
+    input[type="file"]::-webkit-file-upload-button:hover {
+      background-position: 100% 50%;
+    }
+    button[type="submit"] {
+      padding: 1rem 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(45deg, #b88b4a, #d7bb70);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(184, 139, 74, 0.55);
+      transition: background-position 0.3s ease, transform 0.25s ease;
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+      user-select: none;
+      letter-spacing: 0.05em;
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-position: 100% 50%;
+      transform: translateY(-2px);
+      outline: none;
+      box-shadow: 0 7px 18px rgba(184, 139, 74, 0.8);
+    }
+    button[type="submit"]:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 6px rgba(184, 139, 74, 0.9);
+    }
+    .info-text {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7e7e7e;
+      font-style: italic;
+      margin-top: 0.5rem;
+      user-select: none;
+    }
+    @media (max-width: 600px) {
+      .banner {
+        height: 200px;
+        font-size: 2.2rem;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+      form {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <header id="header" class="transparent">
+    <div class="menu-icon" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<div class="logo">
+  <a href="index.html">
+    <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo" />
+  </a>
+</div>
+
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="product.html"><i class="far fa-heart"></i></a>
+      <a href="login.html"><i class="far fa-user"></i></a>
+    </div>
+  </header>
+  <nav id="mobileMenu" class="menu-wrapper hidden">
+    <ul class="menu">
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="craftmanship.html">Craftmanship</a></li>
+          <li><a href="about/about.html">A Journey</a></li>
+          <li><a href="customise.html">Customise</a></li>
+          <li><a href="notfound.html">Our Designers</a></li>
+          <li><a href="peopleandcareer.html">People and Careers</a></li>
+          <li><a href="notfound.html">Stories</a></li>
+          <li><a href="store.html">Our Store</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav> <!-- header close -->
+
+
+  <main class="container" role="main" aria-label="Customize Jewelry Form">
+    <h1>Customize Your Jewelry</h1>
+    <p class="subtitle">Design your dream piece with our expert craftsmen</p>
+    <form id="customizeForm" novalidate>
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required minlength="2" autocomplete="name" />
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required autocomplete="email" />
+
+      <label for="jewelryType">Jewelry Type *</label>
+      <select id="jewelryType" name="jewelryType" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="ring">Ring</option>
+        <option value="necklace">Necklace</option>
+        <option value="bracelet">Bracelet</option>
+        <option value="earrings">Earrings</option>
+        <option value="custom">Custom / Other</option>
+      </select>
+
+      <label for="metal">Preferred Metal</label>
+      <select id="metal" name="metal">
+        <option value="" disabled selected>Select one (optional)</option>
+        <option value="gold">Gold</option>
+        <option value="white-gold">White Gold</option>
+        <option value="rose-gold">Rose Gold</option>
+        <option value="platinum">Platinum</option>
+        <option value="silver">Silver</option>
+      </select>
+
+      <label for="gemstones">Gemstones (if any)</label>
+      <input type="text" id="gemstones" name="gemstones" placeholder="E.g. Diamond, Sapphire, None" />
+
+      <label for="engraving">Engraving Text (max 50 characters)</label>
+      <input type="text" id="engraving" name="engraving" maxlength="50" placeholder="Personalized engraving text" />
+
+      <label for="details">Additional Details or Requests</label>
+      <textarea id="details" name="details" rows="5" placeholder="Describe your customization ideas here"></textarea>
+
+      <label for="reference">Upload Reference Images (optional)</label>
+      <input type="file" id="reference" name="reference" accept="image/*" multiple />
+
+      <button type="submit" aria-label="Submit customization request">Submit Request</button>
+      <p class="info-text">* Required fields</p>
+    </form>
+  </main>
+
+  </section> <!-- Close icon-section -->
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo">
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Hub</h4>
+        <ul>
+          <li><a href="store.html">Store locator</a></li>
+          <li><a href="customercare.html">Customer Care</a></li>
+          <li><a href="notfound.html">Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="notfound.html">Services</a></li>
+          <li><a href="notfound.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>About Elite Jewels</h4>
+        <ul>
+          <li><a href="notfound.html">Brand protection</a></li>
+          <li><a href="notfound.html">Ethics & Compliance</a></li>
+          <li><a href="notfound.html">People & Careers</a></li>
+          <li><a href="notfound.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Privacy & Legal</h4>
+        <ul>
+          <li><a href="notfound.html">Cookies Settings</a></li>
+          <li><a href="notfound.html">Privacy center</a></li>
+          <li><a href="notfound.html">Terms of use</a></li>
+          <li><a href="notfound.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="country-selector">Change Country/Region <strong>Thailand</strong></div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/eliteluxuryjewels?igsh=cGRrdGFoMTIxdXph&utm_source=qr" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/share/1AXvGfFiiA/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" title="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="footer-note">ELITE JEWELS® Official Website</div>
+</footer>
+
+  <script>
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    document.getElementById('customizeForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = this.name;
+      const email = this.email;
+      const jewelryType = this.jewelryType;
+
+      let valid = true;
+
+      if (!name.value.trim() || name.value.trim().length < 2) {
+        valid = false;
+        name.setCustomValidity('Please enter your full name (minimum 2 characters).');
+        name.reportValidity();
+      } else {
+        name.setCustomValidity('');
+      }
+
+      if (!email.value.trim() || !validateEmail(email.value.trim())) {
+        valid = false;
+        email.setCustomValidity('Please enter a valid email address.');
+        email.reportValidity();
+      } else {
+        email.setCustomValidity('');
+      }
+
+      if (!jewelryType.value) {
+        valid = false;
+        jewelryType.setCustomValidity('Please select a jewelry type.');
+        jewelryType.reportValidity();
+      } else {
+        jewelryType.setCustomValidity('');
+      }
+
+      if (valid) {
+        const btn = this.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Submitting...';
+        btn.style.background = 'linear-gradient(45deg, #7a6b38, #a39457)';
+
+        setTimeout(() => {
+          alert('Thank you! Your customization request has been submitted. Our team will contact you shortly.');
+          btn.disabled = false;
+          btn.textContent = 'Submit Request';
+          btn.style.background = 'linear-gradient(45deg, #b88b4a, #d7bb70)';
+          this.reset();
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+</html>
