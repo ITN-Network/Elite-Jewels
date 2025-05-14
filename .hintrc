@@ -22,7 +22,8 @@
       "default",
       {
         "ignore": [
-          "video[playsinline]"
+          "video[playsinline]",
+          "iframe[loading]"
         ]
       }
     ],

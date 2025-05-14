@@ -1,28 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="store.css">
-    <title>Store Locator</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Store Locations - Elite Jewels</title>
+<link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="about.css">
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fefefe;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    animation: fadeInBg 1.5s ease forwards;
+    scroll-behavior: smooth;
+    height: 100%
+  }
+  @keyframes fadeInBg {
+    0% {
+      background: #fefefe;
+    }
+    100% {
+      background: #fffdf9;
+    }
+  }
+footer {
+  width: 100%;
+  background-color: #222; /* or any color */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+  /* Banner image on top */
+  .banner-image {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 180px;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    animation: slideInFromTop 1.2s ease forwards;
+  }
+  .banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+  }
+  .banner-image img:hover {
+    filter: brightness(1);
+  }
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(184,139,74,0.65) 0%, rgba(184,139,74,0.25) 70%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fffdf9;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 0 1rem;
+    user-select: none;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+  }
+  @keyframes slideInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Container for store list */
+  .container {
+    background: #fff;
+    max-width: 900px;
+    width: 95vw;
+    margin: 2rem auto 0 auto;
+    border-radius: 15px;
+    padding: 2rem 2.5rem;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.12),
+      inset 0 0 30px rgba(255 223 186 / 0.3);
+    animation: fadeSlideUp 1s ease forwards;
+  }
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #b88b4a;
+    margin-bottom: 1rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+    user-select: none;
+  }
+  p.intro-text {
+    font-size: 1.1rem;
+    color: #7e7e7e;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  ul.store-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.8rem;
+  }
+  li.store-item {
+    background: #fefcf5;
+    border: 2px solid #e3d7b0;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 3px 6px rgba(184,139,74,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
+  }
+  li.store-item:hover, li.store-item:focus-within {
+    box-shadow: 0 7px 18px rgba(184,139,74,0.45);
+    transform: translateY(-4px);
+  }
+  li.store-item h2 {
+    font-family: 'Playfair Display', serif;
+    color: #b88b4a;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+  }
+  li.store-item address {
+    font-style: normal;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: #554c3b;
+    margin-bottom: 1rem;
+  }
+  li.store-item a.map-link {
+    font-weight: 600;
+    color: #b88b4a;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    align-self: flex-start;
+    transition: color 0.3s ease;
+  }
+  li.store-item a.map-link:hover, li.store-item a.map-link:focus {
+    color: #d7bb70;
+    outline: none;
+  }
+  /* Google Maps container */
+  .map-container {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(184,139,74,0.3);
+    height: 320px;
+    width: 100%;
+    max-width: 900px;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  @media (max-width: 600px) {
+    li.store-item {
+      font-size: 0.95rem;
+      padding: 1rem 1.25rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    p.intro-text {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Store Locator</h1>
-        <div class="store">
-            <div class="store-icon"></div>
-            <p class="store-address">Unit number 01-14, G-Block, Jio World Plaza, Bandra Kurla Complex, Mumbai, Maharashtra, 400051</p>
-        </div>
-        <div class="store">
-            <div class="store-icon"></div>
-            <p class="store-address">Store Address 2, City, State, Zip</p>
-        </div>
-        <div class="store">
-            <div class="store-icon"></div>
-            <p class="store-address">Store Address 3, City, State, Zip</p>
-        </div>
-        <!-- Add more stores as needed -->
+  <header id="header" class="transparent">
+    <div class="menu-icon" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <script src="store.js"></script>
+
+<div class="logo">
+  <a href="index.html">
+    <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo" />
+  </a>
+</div>
+
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="product.html"><i class="far fa-heart"></i></a>
+      <a href="login.html"><i class="far fa-user"></i></a>
+    </div>
+  </header>
+  <nav id="mobileMenu" class="menu-wrapper hidden">
+    <ul class="menu">
+          <li><a href="collection page/collection1.html">Collection</a></li>
+          <li><a href="notfound.html">Craftmanship</a></li>
+          <li><a href="about/about.html">A Journey</a></li>
+          <li><a href="notfound.html">Customise</a></li>
+          <li><a href="notfound.html">Our Designers</a></li>
+          <li><a href="peopleandcareer.html">People and Careers</a></li>
+          <li><a href="notfound.html">Stories</a></li>
+          <li><a href="store.html">Our Store</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav> <!-- header close -->
+  <!-- Top Banner Image -->
+  <div class="banner-image" aria-label="Elite Jewelry store locations banner">
+    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1280&q=80" alt="Jewelry store exterior" />
+    <div class="banner-overlay">Store Locations</div>
+  </div>
+
+  <main class="container" role="main" aria-label="Store locations">
+    <h1>Find Our Stores</h1>
+    <p class="intro-text">Visit Elite Jewels in a city near you. Experience luxury and craftsmanship in person.</p>
+    <ul class="store-list" aria-label="List of store locations">
+      <li class="store-item" tabindex="0">
+        <h2>New York City</h2>
+        <address>
+          123 Fifth Avenue,<br />
+          Manhattan, NY 10001<br />
+          USA
+        </address>
+        <a class="map-link" href="https://goo.gl/maps/bxcnp1AaLPKgZ1Nh9" target="_blank" rel="noopener noreferrer" aria-label="Open New York City store location in Google Maps">View on Map</a>
+      </li>
+      <li class="store-item" tabindex="0">
+        <h2>Los Angeles</h2>
+        <address>
+          456 Sunset Blvd,<br />
+          Los Angeles, CA 90028<br />
+          USA
+        </address>
+        <a class="map-link" href="https://goo.gl/maps/AjF1KyFcvb36WYx97" target="_blank" rel="noopener noreferrer" aria-label="Open Los Angeles store location in Google Maps">View on Map</a>
+      </li>
+      <li class="store-item" tabindex="0">
+        <h2>London</h2>
+        <address>
+          89 Regent Street,<br />
+          London W1B 4EA<br />
+          United Kingdom
+        </address>
+        <a class="map-link" href="https://goo.gl/maps/BxF4oSHMjNYm6djW9" target="_blank" rel="noopener noreferrer" aria-label="Open London store location in Google Maps">View on Map</a>
+      </li>
+      <li class="store-item" tabindex="0">
+        <h2>Dubai</h2>
+        <address>
+          Dubai Mall,<br />
+          Downtown Dubai<br />
+          Dubai, UAE
+        </address>
+        <a class="map-link" href="https://goo.gl/maps/yCY9fLtsSVK2" target="_blank" rel="noopener noreferrer" aria-label="Open Dubai store location in Google Maps">View on Map</a>
+      </li>
+    </ul>
+
+    <div class="map-container" aria-label="Map showing Lustre Jewelry store locations">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1OTl-rmjTCG37cB0xh4Z3Wipqaz-wXOVX" aria-hidden="false" tabindex="0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
+
+  </section> <!-- Close icon-section --> 
+  
+  <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo">
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Hub</h4>
+        <ul>
+          <li><a href="store.html">Store locator</a></li>
+          <li><a href="customercare.html">Customer Care</a></li>
+          <li><a href="notfound.html">Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="notfound.html">Services</a></li>
+          <li><a href="notfound.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>About Elite Jewels</h4>
+        <ul>
+          <li><a href="notfound.html">Brand protection</a></li>
+          <li><a href="notfound.html">Ethics & Compliance</a></li>
+          <li><a href="notfound.html">People & Careers</a></li>
+          <li><a href="notfound.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Privacy & Legal</h4>
+        <ul>
+          <li><a href="notfound.html">Cookies Settings</a></li>
+          <li><a href="notfound.html">Privacy center</a></li>
+          <li><a href="notfound.html">Terms of use</a></li>
+          <li><a href="notfound.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="country-selector">Change Country/Region <strong>Thailand</strong></div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/eliteluxuryjewels?igsh=cGRrdGFoMTIxdXph&utm_source=qr" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/share/1AXvGfFiiA/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" title="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="footer-note">ELITE JEWELS® Official Website</div>
+</footer>
 </body>
 </html>
+
