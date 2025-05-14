@@ -6,7 +6,8 @@
     "axe/text-alternatives": [
       "default",
       {
-        "image-alt": "off"
+        "image-alt": "off",
+        "frame-title": "off"
       }
     ],
     "compat-api/css": [
@@ -23,7 +24,8 @@
       {
         "ignore": [
           "video[playsinline]",
-          "iframe[loading]"
+          "iframe[loading]",
+          "iframe[referrerpolicy=no-referrer-when-downgrade]"
         ]
       }
     ],

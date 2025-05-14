@@ -145,8 +145,8 @@
     top: 0; left: 0;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.45);
     display: flex;
     justify-content: center;
