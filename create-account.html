@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Elite Login</title>
+<title>Create Account - Elite Jewels</title>
 <link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="footer.css">
@@ -21,14 +21,11 @@
     color: #333;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    animation: fadeInBg 1.5s ease forwards;
     padding: 1rem 0;
+    animation: fadeInBg 1.5s ease forwards;
   }
-
   @keyframes fadeInBg {
     0% {
       background: #fefefe;
@@ -37,74 +34,19 @@
       background: #fffdf9;
     }
   }
-
-  /* Full width banner image container */
-  .banner-image {
-    position: relative;
-    width: 100vw;
-    max-width: 100%;
-    height: 160px;
-    overflow: hidden;
-    user-select: none;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    animation: slideInFromTop 1.2s ease forwards;
-  }
-  .banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    filter: brightness(0.85);
-    transition: filter 0.3s ease;
-  }
-  .banner-image img:hover {
-    filter: brightness(1);
-  }
-  /* Overlay gradient and text */
-  .banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(184,139,74,0.65) 0%, rgba(184,139,74,0.25) 70%, transparent 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fffdf9;
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.07em;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.25);
-    padding: 0 1rem;
-    user-select: none;
-  }
-
-  @keyframes slideInFromTop {
-    0% {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  
   .container {
     background: #fff;
-    padding: 3rem 2.5rem 3rem 2.5rem;
-    max-width: 400px;
+    padding: 3rem 2.5rem;
+    max-width: 420px;
     width: 90vw;
     border-radius: 15px;
     box-shadow:
       0 4px 10px rgba(0, 0, 0, 0.15),
       inset 0 0 30px rgba(255 223 186 / 0.3);
     text-align: center;
-    position: relative;
-    overflow: hidden;
     animation: slideUpFade 1s ease forwards;
-    margin-top: 1.5rem;
   }
-
   @keyframes slideUpFade {
     0% {
       opacity: 0;
@@ -115,7 +57,6 @@
       transform: translateY(0);
     }
   }
-
   .brand-logo {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
@@ -126,7 +67,6 @@
     user-select: none;
     animation: glow 2.5s ease-in-out infinite alternate;
   }
-
   @keyframes glow {
     from {
       text-shadow: 0 0 6px #b88b4a99;
@@ -135,20 +75,18 @@
       text-shadow: 0 0 20px #b88b4aaa;
     }
   }
-
   .subtitle {
     font-size: 1rem;
     color: #7e7e7e;
     margin-bottom: 2rem;
     letter-spacing: 0.05em;
   }
-
   form {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
   }
-
+  input[type="text"],
   input[type="email"],
   input[type="password"] {
     padding: 0.75rem 1rem;
@@ -159,12 +97,12 @@
     transition: border-color 0.3s ease;
     outline-offset: 2px;
   }
+  input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="password"]:focus {
     border-color: #b88b4a;
     background: #fffbea;
   }
-
   button {
     padding: 0.85rem 0;
     font-size: 1.1rem;
@@ -188,13 +126,13 @@
     transform: translateY(1px);
     box-shadow: 0 3px 6px rgba(184, 139, 74, 0.75);
   }
-
+  
   .btn-link {
     background: none;
     color: #b88b4a;
     text-decoration: underline;
     font-weight: 600;
-    margin-top: 0.3rem;
+    margin-top: 1rem;
     cursor: pointer;
     padding: 0;
     border: none;
@@ -205,36 +143,22 @@
     color: #d7bb70;
     outline: none;
   }
-
+  
   .actions-row {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: center;
   }
-
+  
   @media (max-width: 480px) {
-    body {
-      padding: 0.8rem 0;
-    }
-
-    .banner-image {
-      height: 100px;
-    }
-
-    .banner-overlay {
-      font-size: 1.1rem;
-      padding: 0 0.8rem;
-    }
-
     .container {
-      padding: 2rem 1.5rem 2rem 1.5rem;
+      padding: 2rem 1.5rem;
       max-width: 90vw;
-      margin-top: 1rem;
     }
     .brand-logo {
       font-size: 2rem;
     }
+    input[type="text"],
     input[type="email"],
     input[type="password"] {
       font-size: 1rem;
@@ -248,7 +172,7 @@
 </style>
 </head>
 <body>
-    <header id="header" class="transparent">
+      <header id="header" class="transparent">
     <div class="menu-icon" id="menuToggle">
       <span></span>
       <span></span>
@@ -282,101 +206,128 @@
       </li>
     </ul>
   </nav> <!-- header close -->
-  <!-- Top Full Width Image Banner -->
-  <div class="banner-image" aria-label="Top banner showing Lustre jewelry collection">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1280&q=80" alt="Luxury jewelry display with golden tones" />
-    <div class="banner-overlay"></div>
-  </div>
 
-  <!-- Login Container -->
-  <main class="container" role="main" aria-label="Login Form">
+  <main class="container" role="main" aria-label="Create Account Form">
     <h1 class="brand-logo" aria-label="International Jewelry Brand">Elite</h1>
-    <p class="subtitle">Login to your account</p>
-    <form id="loginForm" novalidate>
+    <p class="subtitle">Create your account</p>
+    <form id="createAccountForm" novalidate>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Full Name"
+        aria-label="Full name"
+        required
+        minlength="2"
+        autocomplete="name"
+      />
       <input
         type="email"
         id="email"
         name="email"
-        autocomplete="username"
         placeholder="Email address"
         aria-label="Email address"
         required
+        autocomplete="email"
       />
       <input
         type="password"
         id="password"
         name="password"
-        autocomplete="current-password"
         placeholder="Password"
         aria-label="Password"
         required
         minlength="6"
+        autocomplete="new-password"
       />
-      <button type="submit" aria-label="Log in to your account">Log In</button>
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        aria-label="Confirm password"
+        required
+        minlength="6"
+        autocomplete="new-password"
+      />
+      <button type="submit" aria-label="Create your account">Create Account</button>
     </form>
 <div class="actions-row">
-  <a href="create-account.html" class="btn-link" aria-label="Create a new account">Create an Account</a>
-  <a href="forgot-password.html" class="btn-link" aria-label="Reset your password">Forgot Password?</a>
+  <a href="login.html" class="btn-link" aria-label="Back to login page">Back to Login</a>
 </div>
   </main>
-  
-
   <script>
-    // Simple form validation and animation feedback
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const emailInput = this.email;
-      const passwordInput = this.password;
-
-      let valid = true;
-
-      if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
-        valid = false;
-        emailInput.setCustomValidity('Please enter a valid email address');
-        emailInput.reportValidity();
-      } else {
-        emailInput.setCustomValidity('');
-      }
-
-      if (!passwordInput.value.trim() || passwordInput.value.length < 6) {
-        valid = false;
-        passwordInput.setCustomValidity('Password must be at least 6 characters long');
-        passwordInput.reportValidity();
-      } else {
-        passwordInput.setCustomValidity('');
-      }
-
-      if (valid) {
-        // Animate button to show success
-        const btn = this.querySelector('button[type="submit"]');
-        btn.disabled = true;
-        btn.innerText = "Logging in...";
-        btn.style.background = "linear-gradient(45deg, #7a6b38, #a39457)";
-        setTimeout(() => {
-          alert('Login successful! (Demo)');
-          btn.disabled = false;
-          btn.innerText = "Log In";
-          btn.style.background = "linear-gradient(45deg, #b88b4a, #d7bb70)";
-          this.reset();
-        }, 1500);
-      }
-    });
-
     function validateEmail(email) {
       const re = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
       return re.test(String(email).toLowerCase());
     }
 
-    // Button handlers for Create Account and Forgot Password
-    document.getElementById('createAccountBtn').addEventListener('click', () => {
-      alert("Redirecting to account creation page... (Demo)");
+    document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fullname = this.fullname;
+      const email = this.email;
+      const password = this.password;
+      const confirmPassword = this.confirmPassword;
+
+      let valid = true;
+
+      // Validate Full Name
+      if (!fullname.value.trim() || fullname.value.trim().length < 2) {
+        valid = false;
+        fullname.setCustomValidity('Please enter your full name (at least 2 characters)');
+        fullname.reportValidity();
+      } else {
+        fullname.setCustomValidity('');
+      }
+
+      // Validate Email
+      if (!email.value.trim() || !validateEmail(email.value.trim())) {
+        valid = false;
+        email.setCustomValidity('Please enter a valid email address');
+        email.reportValidity();
+      } else {
+        email.setCustomValidity('');
+      }
+
+      // Validate Password
+      if (!password.value.trim() || password.value.length < 6) {
+        valid = false;
+        password.setCustomValidity('Password must be at least 6 characters long');
+        password.reportValidity();
+      } else {
+        password.setCustomValidity('');
+      }
+
+      // Validate Confirm Password
+      if (confirmPassword.value !== password.value) {
+        valid = false;
+        confirmPassword.setCustomValidity('Passwords do not match');
+        confirmPassword.reportValidity();
+      } else {
+        confirmPassword.setCustomValidity('');
+      }
+
+      if (valid) {
+        const btn = this.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.innerText = "Creating...";
+        btn.style.background = "linear-gradient(45deg, #7a6b38, #a39457)";
+        setTimeout(() => {
+          alert('Account created successfully! (Demo)');
+          btn.disabled = false;
+          btn.innerText = "Create Account";
+          btn.style.background = "linear-gradient(45deg, #b88b4a, #d7bb70)";
+          this.reset();
+        }, 1800);
+      }
     });
 
-    document.getElementById('forgotPasswordBtn').addEventListener('click', () => {
-      alert("Redirecting to password reset page... (Demo)");
+    document.getElementById('backToLoginBtn').addEventListener('click', () => {
+      // For demo, just alert. In real usage redirect to login page.
+      alert('Redirecting back to login page... (Demo)');
     });
   </script>
-  
 </body>
 </html>
 

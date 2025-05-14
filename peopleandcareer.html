@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>People & Careers - Elite Jewels</title>
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 2rem 0;
+      animation: fadeInBg 1.5s ease forwards;
+    }
+
+    @keyframes fadeInBg {
+      0% {
+        background: #fefefe;
+      }
+      100% {
+        background: #fffdf9;
+      }
+    }
+
+    /* Top and bottom banner image */
+    .banner-image {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      height: 180px;
+      overflow: hidden;
+      user-select: none;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      animation: slideInFromTop 1.2s ease forwards;
+    }
+    .banner-image.bottom {
+      border-radius: 15px 15px 0 0;
+      animation: slideInFromBottom 1.2s ease forwards;
+      margin-top: 3rem;
+      height: 160px;
+    }
+    .banner-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: brightness(0.85);
+      transition: filter 0.3s ease;
+    }
+    .banner-image img:hover {
+      filter: brightness(1);
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(184,139,74,0.65) 0%, rgba(184,139,74,0.25) 70%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fffdf9;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 0.09em;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+      padding: 0 1rem;
+      user-select: none;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideInFromBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      background: #fff;
+      padding: 3rem 2.5rem 3rem 2.5rem;
+      max-width: 520px;
+      width: 90vw;
+      border-radius: 15px;
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12),
+        inset 0 0 30px rgba(255 223 186 / 0.3);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: slideUpFade 1s ease forwards;
+      margin-top: 2rem;
+    }
+    @keyframes slideUpFade {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .brand-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #b88b4a;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.14em;
+      user-select: none;
+      animation: glow 2.5s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 6px #b88b4a99;
+      }
+      to {
+        text-shadow: 0 0 20px #b88b4aaa;
+      }
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #7e7e7e;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+      padding: 0.75rem 1rem;
+      font-size: 1.1rem;
+      border: 2px solid #e3d7b0;
+      border-radius: 10px;
+      background: #fefcf5;
+      transition: border-color 0.3s ease;
+      outline-offset: 2px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #b88b4a;
+      background: #fffbea;
+    }
+
+    textarea {
+      min-height: 100px;
+      max-height: 180px;
+    }
+
+    button {
+      padding: 1rem 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(45deg, #b88b4a, #d7bb70);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(184, 139, 74, 0.5);
+      transition: background-position 0.3s ease, transform 0.25s ease;
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+      user-select: none;
+      letter-spacing: 0.05em;
+    }
+    button:hover, button:focus {
+      background-position: 100% 50%;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(184, 139, 74, 0.7);
+      outline: none;
+    }
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 6px rgba(184, 139, 74, 0.75);
+    }
+
+    .info-text {
+      font-size: 0.95rem;
+      color: #6e6e6e;
+      margin-top: -1rem;
+      margin-bottom: 1.75rem;
+      font-style: italic;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding-bottom: 2rem;
+      }
+      .banner-image {
+        height: 110px;
+      }
+      .banner-image.bottom {
+        height: 90px;
+        margin-top: 2rem;
+      }
+      .banner-overlay {
+        font-size: 1.3rem;
+        padding: 0 0.8rem;
+      }
+      .container {
+        padding: 2rem 1.5rem 2.5rem 1.5rem;
+        max-width: 95vw;
+        margin-top: 1.5rem;
+      }
+      .brand-logo {
+        font-size: 2.25rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        font-size: 1rem;
+        padding: 0.65rem 0.9rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.85rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Banner Image -->
+  <div class="banner-image" aria-label="Lustre Jewelry People and Careers banner">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1280&q=80" alt="People working in jewelry design studio" />
+    <div class="banner-overlay">People &amp; Careers</div>
+  </div>
+
+  <main class="container" role="main" aria-label="People and Careers Form">
+    <h1 class="brand-logo" aria-label="International Jewelry Brand">Elite Jewels</h1>
+    <p class="subtitle">Join our family. Apply below or get in touch!</p>
+    <form id="careerForm" novalidate>
+      <input
+        type="text"
+        id="fullname"
+        name="fullname"
+        placeholder="Full Name"
+        aria-label="Full Name"
+        required
+        minlength="2"
+        autocomplete="name"
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email address"
+        aria-label="Email address"
+        required
+        autocomplete="email"
+      />
+      <select id="position" name="position" aria-label="Position applying for" required>
+        <option value="" disabled selected>Select Position</option>
+        <option value="designer">Jewelry Designer</option>
+        <option value="sales">Sales Associate</option>
+        <option value="marketing">Marketing Specialist</option>
+        <option value="customer-service">Customer Service</option>
+        <option value="internship">Internship</option>
+      </select>
+      <textarea
+        id="coverLetter"
+        name="coverLetter"
+        placeholder="Cover Letter / Additional Information"
+        aria-label="Cover Letter or Additional Information"
+        rows="5"
+        maxlength="1000"
+      ></textarea>
+      <button type="submit" aria-label="Submit application">Submit Application</button>
+    </form>
+    <p class="info-text">We will review your application and get back to you soon.</p>
+  </main>
+
+  <!-- Bottom Banner Image -->
+  <div class="banner-image bottom" aria-label="Lustre Jewelry studio and craftsmanship">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1280&q=80" alt="Craftsmanship with jewelry tools and gold" />
+    <div class="banner-overlay">Craft Your Future With Lustre</div>
+  </div>
+
+  <script>
+    function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    document.getElementById('careerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fullname = this.fullname;
+      const email = this.email;
+      const position = this.position;
+
+      let valid = true;
+
+      if (!fullname.value.trim() || fullname.value.trim().length < 2) {
+        valid = false;
+        fullname.setCustomValidity('Please enter your full name (minimum 2 characters)');
+        fullname.reportValidity();
+      } else {
+        fullname.setCustomValidity('');
+      }
+
+      if (!email.value.trim() || !validateEmail(email.value.trim())) {
+        valid = false;
+        email.setCustomValidity('Please enter a valid email address');
+        email.reportValidity();
+      } else {
+        email.setCustomValidity('');
+      }
+
+      if (!position.value) {
+        valid = false;
+        position.setCustomValidity('Please select a position');
+        position.reportValidity();
+      } else {
+        position.setCustomValidity('');
+      }
+
+      if (valid) {
+        const btn = this.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.innerText = "Submitting...";
+        btn.style.background = "linear-gradient(45deg, #7a6b38, #a39457)";
+
+        setTimeout(() => {
+          alert('Application submitted successfully! Thank you for your interest. (Demo)');
+          btn.disabled = false;
+          btn.innerText = "Submit Application";
+          btn.style.background = "linear-gradient(45deg, #b88b4a, #d7bb70)";
+          this.reset();
+        }, 1800);
+      }
+    });
+  </script>
+</body>
+</html>
+
