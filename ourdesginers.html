@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Designers - Elite Jewels</title>
+<link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="footer.css">
+<script defer src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  * , *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fffdf9;
+    color: #3d3a31;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    padding-bottom: 3rem;
+  }
+  .banner {
+    width: 100vw;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    border-radius: 0 0 15px 15px;
+    box-shadow: inset 0 0 80px rgba(184,139,74,0.5);
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d7bb70;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+  }
+  .container {
+    max-width: 1100px;
+    width: 95vw;
+    margin: 2.5rem auto 0;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #b88b4a;
+    letter-spacing: 0.1em;
+    margin: 0 0 2rem 0;
+    text-align: center;
+    user-select: none;
+  }
+  .designer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 2rem;
+  }
+  .designer-card {
+    background: #fffcf5;
+    border-radius: 20px;
+    padding: 1.8rem 1.2rem 2.2rem 1.2rem;
+    box-shadow: 0 5px 15px rgba(184, 139, 74, 0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    cursor: default;
+  }
+  .designer-card:focus-within,
+  .designer-card:hover {
+    box-shadow: 0 10px 28px rgba(184, 139, 74, 0.45);
+    transform: translateY(-5px);
+    outline: none;
+  }
+  .designer-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 12px rgba(184, 139, 74, 0.3);
+    transition: transform 0.3s ease;
+  }
+  .designer-card:hover .designer-photo,
+  .designer-card:focus-within .designer-photo {
+    transform: scale(1.07);
+  }
+  .designer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #b88b4a;
+    margin: 0 0 0.4rem 0;
+    user-select: none;
+  }
+  .designer-role {
+    font-style: italic;
+    font-weight: 600;
+    color: #7e7e7e;
+    margin: 0 0 1.1rem 0;
+    letter-spacing: 0.03em;
+  }
+  .designer-bio {
+    font-size: 0.95rem;
+    color: #554c3b;
+    line-height: 1.4;
+  }
+  @media (max-width: 600px) {
+    .designer-photo {
+      width: 110px;
+      height: 110px;
+    }
+    h1 {
+      font-size: 2.3rem;
+    }
+  }
+</style>
+</head>
+<body>
+    <header id="header" class="transparent">
+    <div class="menu-icon" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<div class="logo">
+  <a href="index.html">
+    <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo" />
+  </a>
+</div>
+
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="product.html"><i class="far fa-heart"></i></a>
+      <a href="login.html"><i class="far fa-user"></i></a>
+    </div>
+  </header>
+  <nav id="mobileMenu" class="menu-wrapper hidden">
+    <ul class="menu">
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="craftmanship.html">Craftmanship</a></li>
+          <li><a href="about/about.html">A Journey</a></li>
+          <li><a href="customise.html">Customise</a></li>
+          <li><a href="ourdesginers.html">Our Designers</a></li>
+          <li><a href="peopleandcareer.html">People and Careers</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="store.html">Our Store</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav> <!-- header close -->
+  <section class="banner" aria-label="Our Designers banner with brand style">
+    Our Designers
+  </section>
+  <main class="container" role="main" aria-label="Elite Jewels designers">
+    <h1>Meet Our Talented Designers</h1>
+    <div class="designer-grid">
+      <article class="designer-card" tabindex="0">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Portrait of Clara Johnson" class="designer-photo" />
+        <h2 class="designer-name">Clara Johnson</h2>
+        <p class="designer-role">Lead Jewelry Designer</p>
+        <p class="designer-bio">Clara brings 15 years of experience crafting timeless pieces that blend classic and contemporary styles. Her passion is designing bespoke collections tailored to every client’s story.</p>
+      </article>
+      <article class="designer-card" tabindex="0">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Portrait of Marco Reyes" class="designer-photo" />
+        <h2 class="designer-name">Marco Reyes</h2>
+        <p class="designer-role">Senior Gemologist & Designer</p>
+        <p class="designer-bio">Marco specializes in sourcing rare gemstones and infusing his expert gemological insights into unique designs, ensuring each stone tells its own tale of brilliance.</p>
+      </article>
+      <article class="designer-card" tabindex="0">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Portrait of Aisha Patel" class="designer-photo" />
+        <h2 class="designer-name">Aisha Patel</h2>
+        <p class="designer-role">Creative Director</p>
+        <p class="designer-bio">Aisha oversees the creative vision at Elite Jewels. Her innovative approach and meticulous attention to detail push boundaries in the luxury jewelry world.</p>
+      </article>
+      <article class="designer-card" tabindex="0">
+        <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="Portrait of Jacob Thompson" class="designer-photo" />
+        <h2 class="designer-name">Jacob Thompson</h2>
+        <p class="designer-role">Master Craftsman</p>
+        <p class="designer-bio">Jacob’s hands shape the raw materials into perfect works of art. His craftsmanship ensures durability, beauty, and comfort in every Elite Jewels creation.</p>
+      </article>
+    </div>
+  </main>
+  </section> <!-- Close icon-section -->
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo">
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Hub</h4>
+        <ul>
+          <li><a href="store.html">Store locator</a></li>
+          <li><a href="customercare.html">Customer Care</a></li>
+          <li><a href="#">Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>About Elite Jewels</h4>
+        <ul>
+          <li><a href="notfound.html">Brand protection</a></li>
+          <li><a href="notfound.html">Ethics & Compliance</a></li>
+          <li><a href="notfound.html">People & Careers</a></li>
+          <li><a href="notfound.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Privacy & Legal</h4>
+        <ul>
+          <li><a href="notfound.html">Cookies Settings</a></li>
+          <li><a href="notfound.html">Privacy center</a></li>
+          <li><a href="notfound.html">Terms of use</a></li>
+          <li><a href="notfound.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="country-selector">Change Country/Region <strong>Thailand</strong></div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/eliteluxuryjewels?igsh=cGRrdGFoMTIxdXph&utm_source=qr" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/share/1AXvGfFiiA/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" title="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="footer-note">ELITE JEWELS® Official Website</div>
+</footer>
+</body>
+</html>
