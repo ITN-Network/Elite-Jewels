@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stories - Elite Jewels</title>
+  <link rel="stylesheet" href="collection.css">
+  <link rel="icon" type="image/x-icon" href="logo/Favicon.png" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="footer.css">
+  <script defer src="script.js"></script>
+  <script defer src="collection.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fefefe;
+      color: #3d3a31;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: 3rem;
+      animation: fadeInBg 1.5s ease forwards;
+    }
+
+    @keyframes fadeInBg {
+      0% { background: #fefefe; }
+      100% { background: #fffdf9; }
+    }
+
+    /* Banner */
+    .banner {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      height: 280px;
+      overflow: hidden;
+      user-select: none;
+      border-radius: 0 0 15px 15px;
+      box-shadow: inset 0 0 80px rgba(184,139,74,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+      color: #d7bb70;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      user-select: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 95vw;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #b88b4a;
+      letter-spacing: 0.1em;
+      margin: 0 0 2rem 0;
+      text-align: center;
+      user-select: none;
+    }
+
+    .posts-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 2.2rem;
+    }
+
+    article.post-card {
+      background: #fffcf5;
+      border-radius: 15px;
+      box-shadow:
+        0 4px 12px rgba(184,139,74,0.15),
+        inset 0 0 30px rgba(255 223 186 / 0.3);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    article.post-card:hover,
+    article.post-card:focus-within {
+      box-shadow:
+        0 12px 28px rgba(184,139,74,0.45),
+        inset 0 0 40px rgba(255 223 186 / 0.4);
+      transform: translateY(-5px);
+      outline: none;
+    }
+
+    .post-image img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+      aspect-ratio: 4/3;
+      border-radius: 15px 15px 0 0;
+      user-select: none;
+    }
+    article.post-card:hover .post-image img,
+    article.post-card:focus-within .post-image img {
+      transform: scale(1.05);
+    }
+
+    .post-content {
+      padding: 1rem 1.25rem 1.5rem 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      color: #b88b4a;
+      line-height: 1.2;
+    }
+
+    .post-excerpt {
+      font-size: 0.95rem;
+      color: #6e6a5a;
+      flex-grow: 1;
+      margin: 0 0 1rem 0;
+      font-style: italic;
+    }
+
+    .post-meta {
+      font-size: 0.85rem;
+      color: #7e7e7e;
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .read-more {
+      margin-top: 0.8rem;
+      font-weight: 600;
+      color: #b88b4a;
+      text-decoration: underline;
+      font-size: 1rem;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+    .read-more:hover,
+    .read-more:focus {
+      color: #d7bb70;
+      outline: none;
+    }
+
+    @media (max-width: 600px) {
+      .post-image img {
+        height: 140px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header id="header" class="transparent">
+    <div class="menu-icon" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<div class="logo">
+  <a href="index.html">
+    <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo" />
+  </a>
+</div>
+
+    <div class="icons">
+      <i class="fas fa-search"></i>
+      <a href="product.html"><i class="far fa-heart"></i></a>
+      <a href="login.html"><i class="far fa-user"></i></a>
+    </div>
+  </header>
+  <nav id="mobileMenu" class="menu-wrapper hidden">
+    <ul class="menu">
+          <li><a href="collection.html">Collection</a></li>
+          <li><a href="craftmanship.html">Craftmanship</a></li>
+          <li><a href="about/about.html">A Journey</a></li>
+          <li><a href="customise.html">Customise</a></li>
+          <li><a href="notfound.html">Our Designers</a></li>
+          <li><a href="peopleandcareer.html">People and Careers</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="store.html">Our Store</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav> <!-- header close -->
+  <section class="banner" aria-label="Elite Jewels stories banner">
+  </section>
+
+  <main class="container" role="main" aria-label="Blog posts and news">
+    <h1>Elite Jewels Stories</h1>
+    <div class="posts-list">
+      <article class="post-card" tabindex="0" role="article" aria-label="The art of diamond cutting">
+        <div class="post-image">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=640&q=80" alt="Diamond being cut by expert" loading="lazy" />
+        </div>
+        <div class="post-content">
+          <h2 class="post-title">The Art of Diamond Cutting</h2>
+          <p class="post-excerpt">Discover how master craftsmen transform rough diamonds into breathtaking gems that epitomize luxury and brilliance.</p>
+          <div class="post-meta">
+            <time datetime="2024-05-10">May 10, 2024</time>
+            <span>By Elite Jewels</span>
+          </div>
+          <button class="read-more" aria-label="Read full article The Art of Diamond Cutting">Read More</button>
+        </div>
+      </article>
+
+      <article class="post-card" tabindex="0" role="article" aria-label="Our journey to sustainable sourcing">
+        <div class="post-image">
+          <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=640&q=80" alt="Gemstones selection process" loading="lazy" />
+        </div>
+        <div class="post-content">
+          <h2 class="post-title">Our Journey to Sustainable Sourcing</h2>
+          <p class="post-excerpt">Learn about our commitment to ethical and sustainable practices to ensure each jewel honors the earth and its people.</p>
+          <div class="post-meta">
+            <time datetime="2024-04-22">April 22, 2024</time>
+            <span>By Elite Jewels</span>
+          </div>
+          <button class="read-more" aria-label="Read full article Our Journey to Sustainable Sourcing">Read More</button>
+        </div>
+      </article>
+
+      <article class="post-card" tabindex="0" role="article" aria-label="How to style your jewelry for special occasions">
+        <div class="post-image">
+          <img src="https://images.unsplash.com/photo-1496317556649-f930d733eea0?auto=format&fit=crop&w=640&q=80" alt="Elegant woman wearing jewelry" loading="lazy" />
+        </div>
+        <div class="post-content">
+          <h2 class="post-title">How to Style Your Jewelry for Special Occasions</h2>
+          <p class="post-excerpt">Explore expert tips and fashion trends to highlight your unique style with our exclusive collection.</p>
+          <div class="post-meta">
+            <time datetime="2024-03-15">March 15, 2024</time>
+            <span>By Elite Jewels</span>
+          </div>
+          <button class="read-more" aria-label="Read full article How to Style Your Jewelry for Special Occasions">Read More</button>
+        </div>
+      </article>
+
+      <article class="post-card" tabindex="0" role="article" aria-label="Behind the scenes: Crafting with passion">
+        <div class="post-image">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=640&q=80" alt="Jeweler working on a ring" loading="lazy" />
+        </div>
+        <div class="post-content">
+          <h2 class="post-title">Behind the Scenes: Crafting with Passion</h2>
+          <p class="post-excerpt">Get an exclusive look at the dedication and artistry behind every masterpiece created at Elite Jewels.</p>
+          <div class="post-meta">
+            <time datetime="2024-02-28">February 28, 2024</time>
+            <span>By Elite Jewels</span>
+          </div>
+          <button class="read-more" aria-label="Read full article Behind the Scenes: Crafting with Passion">Read More</button>
+        </div>
+      </article>
+    </div>
+  </main>
+  </section> <!-- Close icon-section -->
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo/Elite Jewels logo.png" alt="Elite Jewels Logo">
+    </div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Contact Hub</h4>
+        <ul>
+          <li><a href="store.html">Store locator</a></li>
+          <li><a href="customercare.html">Customer Care</a></li>
+          <li><a href="notfound.html">Appointment</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="notfound.html">Services</a></li>
+          <li><a href="notfound.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>About Elite Jewels</h4>
+        <ul>
+          <li><a href="notfound.html">Brand protection</a></li>
+          <li><a href="notfound.html">Ethics & Compliance</a></li>
+          <li><a href="notfound.html">People & Careers</a></li>
+          <li><a href="notfound.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Privacy & Legal</h4>
+        <ul>
+          <li><a href="notfound.html">Cookies Settings</a></li>
+          <li><a href="notfound.html">Privacy center</a></li>
+          <li><a href="notfound.html">Terms of use</a></li>
+          <li><a href="notfound.html">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="country-selector">Change Country/Region <strong>Thailand</strong></div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/eliteluxuryjewels?igsh=cGRrdGFoMTIxdXph&utm_source=qr" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" title="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+      <a href="https://www.facebook.com/share/1AXvGfFiiA/?mibextid=wwXIfr" title="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" title="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <div class="footer-note">ELITE JEWELS® Official Website</div>
+</footer>
+</body>
+</html>
+
